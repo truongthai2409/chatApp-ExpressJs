@@ -8,6 +8,7 @@ body {
   font-size: 1.6rem;
   font-weight: normal;
   font-family: "Poppins";
+  margin: 0;
 }
 a {
   text-decoration: none;
@@ -22,22 +23,33 @@ input {
 
 $colorFamous: rgb(214, 214, 216);
 .container {
-  position: fixed;
+  display: flex;
+  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(214, 214, 216);
+  // background-color: rgb(214, 214, 216);
 }
+.animation {
+  width: calc(100% - 500px);
+  height: 100vh;
+  background-color: #c797eb;
+}
+
 .login {
-  width: 70%;
-  height: 90%;
-  background-color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  display: flex;
+  // width: 70%;
+  // height: 90%;
+  // background-color: white;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // position: absolute;
+  // display: flex;
+  h1 {
+    text-align: center;
+    color: rgb(100, 70, 124);
+  }
   &__image {
     display: inline-block;
     padding-right: 0;
@@ -47,16 +59,20 @@ $colorFamous: rgb(214, 214, 216);
     object-fit: cover;
   }
   &__form {
-    h1 {
-      text-align: center;
-      color: rgb(100, 70, 124);
-    }
-    padding-top: 9rem;
-    margin-top: 3rem;
-    margin-left: 5.5rem;
-    width: 40rem;
-    height: 50rem;
+    position: absolute;
+    // z-index: -1;
+    // padding-top: 9rem;
+    // margin-top: 3rem;
+    // margin-left: 5.5rem;
+    // width: 40rem;
+    // height: 50rem;
     color: red;
+    select {
+      font-size: 16px;
+      padding: 5px;
+      height: 40px;
+      width: 100%;
+    }
     &__label {
       margin-left: 2rem;
     }
@@ -89,4 +105,3 @@ $colorFamous: rgb(214, 214, 216);
     }
   }
 }
-

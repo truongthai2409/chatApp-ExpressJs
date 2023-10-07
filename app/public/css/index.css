@@ -10,6 +10,7 @@ body {
   font-size: 1.6rem;
   font-weight: normal;
   font-family: "Poppins";
+  margin: 0;
 }
 
 a {
@@ -26,23 +27,22 @@ input {
 }
 
 .container {
-  position: fixed;
+  display: flex;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(214, 214, 216);
 }
 
-.login {
-  width: 70%;
-  height: 90%;
-  background-color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  display: flex;
+.animation {
+  width: calc(100% - 500px);
+  height: 100vh;
+  background-color: #c797eb;
+}
+
+.login h1 {
+  text-align: center;
+  color: rgb(100, 70, 124);
 }
 .login__image {
   display: inline-block;
@@ -53,16 +53,14 @@ input {
   object-fit: cover;
 }
 .login__form {
-  padding-top: 9rem;
-  margin-top: 3rem;
-  margin-left: 5.5rem;
-  width: 40rem;
-  height: 50rem;
+  position: absolute;
   color: red;
 }
-.login__form h1 {
-  text-align: center;
-  color: rgb(100, 70, 124);
+.login__form select {
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
 }
 .login__form__label {
   margin-left: 2rem;

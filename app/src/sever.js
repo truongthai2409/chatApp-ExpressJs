@@ -4,7 +4,28 @@ const path = require("path");
 const Sever = require("socket.io");
 const http = require("http");
 const Filter = require("bad-words");
-var qs = require("qs");
+const qs = require("qs");
+const mysql = require('mysql');
+const bcrypt = require('bcrypt');
+
+
+//connect database
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root', // Thay thế bằng tên người dùng MySQL của bạn
+//   password: '', // Thay thế bằng mật khẩu MySQL của bạn
+//   database: 'chatApp' // Thay thế bằng tên cơ sở dữ liệu MySQL của bạn
+// });
+
+// db.connect((err) => {
+//   if (err) {
+//     console.error('Failed to connect to MySQL:', err);
+//     process.exit(1);
+//   }
+//   console.log('Connected to MySQL');
+// });
+
+
 const { getUserList, addUserList, removeUserList } = require("../utils/users");
 
 const formatAt = require("../utils/create-messages");
@@ -16,6 +37,7 @@ const server = http.createServer(app);
 const io = Sever(server);
 
 // ===================================
+
 io.on("connection", (socket) => {
   //room
   socket.on("chat message query", ({ queryString }) => {
