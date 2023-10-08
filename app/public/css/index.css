@@ -40,9 +40,69 @@ input {
   background-color: #c797eb;
 }
 
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70%;
+}
+.button button {
+  display: block;
+}
+
+.login {
+  width: 500px;
+  margin: 0 auto;
+}
 .login h1 {
-  text-align: center;
+  display: grid;
+  margin: 1rem 4rem;
   color: rgb(100, 70, 124);
+  justify-content: center;
+  margin: 5rem 0;
+}
+.login h2 {
+  display: grid;
+  color: rgb(100, 70, 124);
+  justify-content: center;
+}
+.login__form {
+  color: #c797eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login__form__inputs {
+  padding-left: 4.5rem;
+  outline: none;
+  width: 100%;
+  height: 4rem;
+  border: none;
+  background-color: #f0ecfc;
+}
+.login__form__button {
+  display: block;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  height: 3.5rem;
+  color: rgb(34, 65, 94);
+  font-size: medium;
+  padding: 10px 20px;
+}
+.login__field {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.login__field i {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  margin-left: 2rem;
 }
 .login__image {
   display: inline-block;
@@ -51,44 +111,6 @@ input {
   width: 45%;
   height: 100%;
   object-fit: cover;
-}
-.login__form {
-  position: absolute;
-  color: red;
-}
-.login__form select {
-  font-size: 16px;
-  padding: 5px;
-  height: 40px;
-  width: 100%;
-}
-.login__form__label {
-  margin-left: 2rem;
-}
-.login__form__label:hover {
-  cursor: pointer;
-}
-.login__form__inputs {
-  margin: 0.5rem 0 2rem;
-  outline: none;
-  width: 90%;
-  height: 4rem;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.login__form__button {
-  border: none;
-  cursor: pointer;
-  background-color: #f0ecfc;
-  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
-  min-width: 36rem;
-  height: 3.5rem;
-  color: rgb(34, 65, 94);
-  margin-left: 2rem;
-  margin-top: 1.5rem;
-  padding: 0.5rem 4rem;
-  font-size: larger;
 }
 
 /*# sourceMappingURL=index.css.map */

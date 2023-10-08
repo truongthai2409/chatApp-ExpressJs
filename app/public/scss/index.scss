@@ -24,7 +24,6 @@ input {
 $colorFamous: rgb(214, 214, 216);
 .container {
   display: flex;
-  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -36,19 +35,69 @@ $colorFamous: rgb(214, 214, 216);
   height: 100vh;
   background-color: #c797eb;
 }
+.button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70%;
+  button{
+    display: block;
+
+  }
+}
 
 .login {
-  // width: 70%;
-  // height: 90%;
-  // background-color: white;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-  // position: absolute;
-  // display: flex;
-  h1 {
-    text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  h1{
+    display: grid;
+    margin: 1rem 4rem;
     color: rgb(100, 70, 124);
+    justify-content: center;
+    margin: 5rem 0;
+  }
+  h2 {
+    display: grid;
+    color: rgb(100, 70, 124);
+    justify-content: center;
+  }
+  &__form {
+    color: #c797eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__inputs {
+      padding-left: 4.5rem;
+      outline: none;
+      width: 100%;
+      height: 4rem;
+      border: none;
+      background-color: #f0ecfc;
+    }
+    &__button {
+      display: block;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #f0ecfc;
+      background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+      height: 3.5rem;
+      color: rgb(34, 65, 94);
+      font-size: medium;
+      padding: 10px 20px;
+    }
+  }
+  &__field {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    i {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      margin-left: 2rem;
+    }
   }
   &__image {
     display: inline-block;
@@ -58,50 +107,7 @@ $colorFamous: rgb(214, 214, 216);
     height: 100%;
     object-fit: cover;
   }
-  &__form {
-    position: absolute;
-    // z-index: -1;
-    // padding-top: 9rem;
-    // margin-top: 3rem;
-    // margin-left: 5.5rem;
-    // width: 40rem;
-    // height: 50rem;
-    color: red;
-    select {
-      font-size: 16px;
-      padding: 5px;
-      height: 40px;
-      width: 100%;
-    }
-    &__label {
-      margin-left: 2rem;
-    }
-    &__label:hover {
-      cursor: pointer;
-    }
-    &__inputs {
-      margin: 0.5rem 0 2rem;
-      // margin-bottom: 2rem;
-      outline: none;
-      width: 90%;
-      height: 4rem;
-      //   display: inline-block;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &__button {
-      border: none;
-      cursor: pointer;
-      background-color: #f0ecfc;
-      background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
-      min-width: 36rem;
-      height: 3.5rem;
-      color: rgb(34, 65, 94);
-      margin-left: 2rem;
-      margin-top: 1.5rem;
-      padding: 0.5rem 4rem;
-      font-size: larger;
-    }
-  }
 }
+// #nameField {
+//   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+// }

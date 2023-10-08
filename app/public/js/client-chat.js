@@ -1,7 +1,16 @@
 // ==> chat.html
-var socket = io();
-var form = document.getElementById("form");
-var input = document.getElementById("input");
+let socket = io();
+let form = document.getElementById("form");
+let input = document.getElementById("input");
+let btnSignIn = document.getElementById("btnSignIn")
+let btnSignUp = document.getElementById("btnSignUp")
+let title = document.getElementById("title")
+let nameField = document.getElementById("nameField")
+
+btnSignIn.onclick = function(){
+  nameField.style.height = "0";
+}
+
 
 // xử lý query string
 const queryString = location.search;

@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,500&display=swap"
       rel="stylesheet"
@@ -22,36 +28,43 @@
       <!-- <img class="login__image" src="https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw0OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt=""> -->
       <div class="login">
         <h1>Welcom to chat app</h1>
+        <h2 id="title">Sign In</h2>
         <form class="login__form" action="chat.html">
-          <label class="login__form__label" for="user">User Name</label>
-          <i class="fa-solid fa-user"></i>
-          <input
-            class="login__form__inputs"
-            autocomplete="off"
-            name="user"
-            id="user"
-            placeholder="Enter your user name"
-          />
-          <label class="login__form__label" for="room">Pass Word</label>
-          <i class="fa-solid fa-lock"></i>
-          <input
-            class="login__form__inputs"
-            autocomplete="off"
-            name="room"
-            id="room"
-            placeholder="Enter your password"
-            type="password"
-          />
-          <label for="login__form__label">Room</label>
-          <select name="room" id="room"  class="login__form__inputs">
-            <option value="Team1">Team 1</option>
-            <option value="Python">Python</option>
-            <option value="PHP">PHP</option>
-            <option value="C#">C#</option>
-            <option value="Ruby">Ruby</option>
-            <option value="Java">Java</option>
-          </select>
-          <button class="login__form__button" type="submit">Sign In</button>
+          <div class="login__field">
+            <i class="fa-solid fa-user login__form__icon"></i>
+            <input
+              class="login__form__inputs"
+              autocomplete="on"
+              name="user"
+              id="user"
+              placeholder="User name"
+            />
+          </div>
+          <div class="login__field">
+            <i class="fa-solid fa-lock login__form__icon"></i>
+            <input
+              class="login__form__inputs"
+              name="room"
+              id="room"
+              placeholder="Password"
+              type="password"
+            />
+          </div>
+          <div class="login__field" id="nameField">
+            <i class="fa-solid fa-house login__form__icon"></i>
+            <select name="room" id="room" class="login__form__inputs hidden">
+              <option value="Team1">Team 1</option>
+              <option value="Python">Python</option>
+              <option value="PHP">PHP</option>
+              <option value="C#">C#</option>
+              <option value="Ruby">Ruby</option>
+              <option value="Java">Java</option>
+            </select>
+          </div>
+          <div class="button">
+            <button class="login__form__button" id="btnSignIn" type="submit">Sign In</button>
+            <button class="login__form__button disable" id="btnSignUp" type="submit">Sign Up</button>
+          </div>
         </form>
       </div>
     </div>
