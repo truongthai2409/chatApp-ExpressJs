@@ -379,4 +379,13 @@ input {
   top: 40%;
 }
 
+.emoji {
+  position: absolute;
+  z-index: 2;
+  width: 324px;
+  height: 279px;
+  background-color: red;
+  bottom: 20px;
+}
+
 /*# sourceMappingURL=index.css.map */
