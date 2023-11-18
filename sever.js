@@ -50,16 +50,20 @@ io.on("connection", (socket) => {
 
   // Listen for chatMessage
   socket.on("chatMessage", (msg) => {
-    let user = {
-      id: "",
-      username: "",
-      room: "",
-    };
-    user = getCurrentUser(socket.id);
-    if (!user.room) {
-      user.room = "";
+    try {
+      let user = {
+        id: "",
+        username: "",
+        room: "",
+      };
+      user = getCurrentUser(socket.id);
+      if (!user.room) {
+        user.room = "";
+      }
+      io.to(user.room).emit("message", formatMessage(user.username, msg));
+    } catch (error) {
+      io.to(user).emit("message", formatMessage(user.username, msg));
     }
-    io.to(user.room).emit("message", formatMessage(user.username, msg));
   });
 
   // Runs when client disconnects

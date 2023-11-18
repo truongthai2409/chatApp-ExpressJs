@@ -60,6 +60,7 @@ function outputMessage(message) {
     "rounded-3",
     "bg-primary",
     "meta",
+    // "float-end",
   ];
   for (const abc of classP) {
     pText.classList.add(abc);

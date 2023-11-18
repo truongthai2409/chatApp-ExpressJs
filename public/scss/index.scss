@@ -8,7 +8,6 @@
   --error-color: #d9534f;
 }
 
-
 $colorFamous: rgb(214, 214, 216);
 
 html {
@@ -47,7 +46,6 @@ img {
 input {
   display: block;
 }
-
 
 .container {
   position: relative;
@@ -396,4 +394,10 @@ input {
   transform: translateX(-50%, -50%);
   left: 50%;
   top: 40%;
+}
+@media only screen and (max-device-width: 1020px) {
+  /* Đặt kiểu cho màn hình dọc của iPad */
+  .animation {
+    display: none;
+  }
 }

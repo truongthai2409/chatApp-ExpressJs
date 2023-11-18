@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .emoji {
   position: absolute;
   z-index: 2;
@@ -6,6 +7,24 @@
   bottom: 113px;
   right: 122px;
   display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Đặt kiểu cho màn hình dọc của iPad */
+  body {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* Đặt kiểu cho tất cả các điện thoại */
+  body {
+    height: 920px;
+  }
+  .list-user {
+    height: 30vh;
+    overflow-y: auto;
+    border-bottom: 1px solid;
+  }
 }
 
 /*# sourceMappingURL=chat.css.map */
