@@ -19,12 +19,13 @@ emoji.addEventListener("click", () => {
   if (check) {
     divEmoji.style.display = "block";
     divEmoji.appendChild(picker);
-    array = [];
+    // array = [];
     check = false;
-  }else{
+  } else {
     divEmoji.style.display = "none";
     check = true;
     array = [];
   }
 });
+
 

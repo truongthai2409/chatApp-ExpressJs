@@ -3,11 +3,12 @@ const app = express();
 const path = require("path");
 const socketio = require("socket.io");
 const http = require("http");
-// const Filter = require("bad-words");
-// const qs = require("qs");
-// const mysql = require('mysql');
-// const bcrypt = require('bcrypt');
 
+const { dbService } = require("./src/services/databaseService")
+dbService.connect().then(async () => {
+  const user = new User({ full_name: "John", email: "aaa", password: "aaa", avatar: "aaa" })
+  await dbService.users.insertOne(user)
+})
 const formatMessage = require("./utils/create-messages");
 const {
   userJoin,
@@ -15,6 +16,8 @@ const {
   userLeave,
   getRoomUsers,
 } = require("./utils/users");
+const { default: databaseService } = require("./src/services/databaseService");
+const { User } = require("./src/models/User");
 
 const port = 3000;
 
@@ -32,7 +35,7 @@ io.on("connection", (socket) => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
-    socket.emit("message", formatMessage(botName, "Welcome to ChatCord!"));
+    // socket.emit("message", formatMessage(botName, "Welcome to ChatCord!"));
 
     socket.broadcast
       .to(user.room)
@@ -88,3 +91,5 @@ io.on("connection", (socket) => {
 server.listen(port, () => {
   console.log("listen port http://localhost:" + port);
 });
+
+

@@ -11,7 +11,7 @@ let { username, room } = Qs.parse(location.search, {
 
 let Variable = { username, room }
 
-// console.log(Variable)
+console.log(Variable)
 
 const socket = io();
 
@@ -19,22 +19,24 @@ socket.emit("joinRoom", Variable);
 
 socket.on("roomUsers", (Variable) => {
   // outputRoomName(room);
-  // console.log(Variable)
+  console.log(Variable)
   outputUsers(Variable.users);
   // console.log(outputUsers(Variable.users))
 });
 
 socket.on("message", (message) => {
-  outputMessage(message);
+  console.log(message)
+  const checkSender = message.username == username
+  outputMessage(message, checkSender);
   chatMessages.scrollTop = chatMessages.scrollHeight;
-
 });
 
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let msg = e.target.elements.msg.value;
   msg = msg.trim();
-  console.log(msg);
+
+
   if (!msg) {
     return false;
   }
@@ -43,9 +45,15 @@ chatForm.addEventListener("submit", (e) => {
   e.target.elements.msg.focus();
 });
 
-function outputMessage(message) {
+function outputMessage(message, checkSender) {
+  let classDiv = []
+  if (checkSender == true) {
+    classDiv = ["d-flex", "flex-row", "justify-content-end", "message"];
+  } else {
+    classDiv = ["d-flex", "flex-row", "justify-content-start", "message"];
+  }
   const div = document.createElement("div");
-  const classDiv = ["d-flex", "flex-row", "justify-content-end", "message"];
+
   for (const p of classDiv) {
     div.classList.add(p);
   }
@@ -60,12 +68,10 @@ function outputMessage(message) {
     "rounded-3",
     "bg-primary",
     "meta",
-    // "float-end",
   ];
   for (const abc of classP) {
     pText.classList.add(abc);
   }
-  
 
   const timer = document.createElement("p");
   const timPe = ["small", "me-3", "mb-3", "rounded-3", "text-muted"];
@@ -75,11 +81,10 @@ function outputMessage(message) {
 
   const avatar = document.createElement('img');
   avatar.src = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp";
-  avatar.alt="avatar 1";
-  avatar.style="width: 45px; height: 100%"
-
+  avatar.alt = "avatar 1";
+  avatar.style = "width: 45px; height: 100%"
   const Div1 = document.createElement('div');
-  
+
   Div1.appendChild(pText);
   Div1.appendChild(timer);
   div.appendChild(Div1);
@@ -88,14 +93,9 @@ function outputMessage(message) {
 
   // p.innerText = message.username;
   pText.innerText = message.text;
-  timer.innerText = `${message.time} ${message.username}` ;
+  timer.innerText = `${message.time} ${message.username}`;
   document.querySelector(".chat-messages").appendChild(div);
 }
-
-// Add room name to DOM
-// function outputRoomName(room) {
-//   roomName.innerText = room;
-// }
 
 // Add users to DOM
 function outputUsers(users) {
@@ -112,12 +112,12 @@ function outputUsers(users) {
     let name = document.createElement('p');
 
     img.src = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp";
-    img.style="width: 60px";
-   
+    img.style = "width: 60px";
+
     const classDiv1 = ["d-flex", "justify-content-between"];
-    const classDiv2 = ["d-flex", "flex-row"]; 
+    const classDiv2 = ["d-flex", "flex-row"];
     const classImg = ["d-flex", "align-self-center", "me-3"];
-    const className = ["fw-bold", "mb-0", "d-flex", "justify-content-between"];  
+    const className = ["fw-bold", "mb-0", "d-flex", "justify-content-between"];
 
 
     for (const p of classDiv1) {
@@ -143,9 +143,9 @@ function outputUsers(users) {
     divImg.appendChild(img);
     div2.appendChild(divName);
     divName.appendChild(name);
-    
-   
-    
+
+
+
   });
 }
 
